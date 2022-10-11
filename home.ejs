@@ -1,0 +1,21 @@
+<%- include("partials/header") -%>
+
+
+  <h1>Home</h1>
+  <p>
+    <%= homeContent %>
+  </p>
+  <a href="/compose" class="composeBtn">COMPOSE </a>
+  <% for(var i=0;i<postMade.length; i++){ %>
+    <h1>
+      <%= postMade[i].Title %>
+    </h1>
+    <p>
+      <%= (postMade[i].Post).substring(0, 100)+ "...." %>
+    </p>
+    <a class="readBtn" href="/postMade/<%= postMade[i].Title  %>"> Read More</a>
+    <a class="deleteBtn">delete</a>
+    <% } %>
+
+
+      <%- include("partials/footer") -%>
